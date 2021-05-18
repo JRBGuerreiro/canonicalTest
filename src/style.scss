@@ -4,13 +4,20 @@ $color-mid-dark: #a87ca0;
 @include vanilla;
 
 //3px border top of card
-.p-card--highlighted {
+.card--header {
     @include vf-highlight-bar;
+    padding: .7rem 1rem .7em;
 }
 
-//separator dotted as per designs
-.u-sv1 {
-    background: none;
-    border-top: 1px dotted rgba(0, 0, 0, 0.15);
-    height: 0;
+.card--content {
+    border-top: 1px dotted #d9d9d9;
+    margin: 0 .5rem;
+    padding: .75rem .5rem .5rem;
+}
+
+.card--footer {
+    border-top: 1px dotted #d9d9d9;
+    margin: auto .5rem 0;
+    max-width: inherit;
+    padding: 1rem .5rem;
 }
