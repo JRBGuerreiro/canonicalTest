@@ -1,0 +1,16 @@
+// override color so coloured bar at top of the card matches the designs
+$color-mid-dark: #a87ca0;
+@import "../node_modules/vanilla-framework/scss/vanilla";
+@include vanilla;
+
+//3px border top of card
+.p-card--highlighted {
+    @include vf-highlight-bar;
+}
+
+//separator dotted as per designs
+.u-sv1 {
+    background: none;
+    border-top: 1px dotted rgba(0, 0, 0, 0.15);
+    height: 0;
+}
