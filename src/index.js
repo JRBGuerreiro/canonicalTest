@@ -1,7 +1,4 @@
-//grab our section
-const section = document.querySelector("#card-row");
-
-//self invoking function since we want to invoke it immediatelly after being defined
+//invoke function immediately after being defined
 (function fetchData() {
     fetch("https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json")
     .then((response) => {
@@ -17,8 +14,9 @@ const section = document.querySelector("#card-row");
 
 //utility function which will iterate through the data fetched from the api and render elements to the DOM
 function structureHtmlFromData(data) {
-    console.log(data)
-    data.map(({featured_media, title, _embedded, date, link, type}, index) => {
+    //we are inserting the generated html below the row
+    const section = document.querySelector("#card-row");
+    data.map(({featured_media, title, _embedded, date, link}, index) => {
         //our date object
         const publishedDate = new Date(date)
         //get month string from date object
